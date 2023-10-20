@@ -4,6 +4,15 @@
     {
         static void Main(string[] args)
         {
+            Average("daily", new Random().Next(10, 30));
+            Average("weekly", new Random().Next(10, 35));
+            Average("monthly", new Random().Next(10, 40));
+        }
+
+        private static void Average(string period, int temperature)
+        {
+            Console.WriteLine($"Welcome to the {period} forecast page");
+            Console.WriteLine($"The average temperature expects to be around {temperature} C \r\n");
         }
 
         public string GetDayOfWeek(int day)
