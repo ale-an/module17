@@ -1,12 +1,25 @@
-﻿namespace Module17
+﻿using Module17.Practice;
+
+namespace Module17
 {
     public class Program
     {
         static void Main(string[] args)
         {
-            Average("daily", new Random().Next(10, 30));
-            Average("weekly", new Random().Next(10, 35));
-            Average("monthly", new Random().Next(10, 40));
+            var regularAccount = new RegularAccount
+            {
+                Balance = 1000
+            };
+            var salaryAccount = new SalaryAccount()
+            {
+                Balance = 1000
+            };
+            
+            regularAccount.CalculateInterest();
+            salaryAccount.CalculateInterest();
+
+            Console.WriteLine($"Обычная ставка - {regularAccount.Interest}");
+            Console.WriteLine($"Cтавка зарплатного аккаунта - {salaryAccount.Interest}");
         }
 
         private static void Average(string period, int temperature)
